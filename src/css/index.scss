@@ -1,0 +1,21 @@
+@import "./components/Counter.scss";
+@import "./components/CounterButton.scss";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  background: #f4f6fb;
+  color: #4c5973;
+}
+
+.app {
+  text-align: center;
+}
+
+.hyperapp-logo {
+  width: 150px;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "hyperapp-kit",
+  "version": "0.0.1",
+  "description": "A starter kit for Hyperapp with prerendering.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "parcel src/index.html -d .localserver --open",
+    "build": "rm -rf dist && parcel build src/index.html --public-url ./ && node build.js",
+    "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
+    "test": "jest --coverage --no-cache"
+  },
+  "author": "atomiks",
+  "license": "MIT",
+  "dependencies": {
+    "hyperapp": "^1.2.6",
+    "@hyperapp/render": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "jest": "^23.1.0",
+    "node-sass": "^4.9.0",
+    "parcel-bundler": "^1.9.0"
+  }
+}
