@@ -1,6 +1,6 @@
 import "./css/index"
 import { h, app } from "hyperapp"
-import { withRender } from "@hyperapp/render"
+import { withRender } from "@hyperapp/render/src/browser"
 import { prerender, isBrowser } from "./js/utils"
 import state from "./js/state"
 import actions from "./js/actions"
