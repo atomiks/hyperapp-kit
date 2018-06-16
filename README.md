@@ -18,6 +18,8 @@ cd hyperapp-kit
 npm install
 ```
 
+Wipe git commit history with `npm run wipe`.
+
 ## Development
 
 ```shell
@@ -57,7 +59,7 @@ npm test
 
 ### JSX
 
-Virtual nodes as XML tags instead of `h` function calls is usually easier to parse because of the terminating tag. It also looks stylistically pleasing due to familiarity with writing UIs as HTML.
+Virtual nodes as XML tags instead of `h` function calls is usually easier to mentally parse because of the terminating tag. It also looks stylistically pleasing due to familiarity with writing UIs as HTML.
 
 ### Prettier
 
