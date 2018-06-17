@@ -46,6 +46,10 @@ Static parts of the app (i.e. content not loaded via `fetch` or `XMLHttpRequest`
 
 > Google is able to index dynamic content loaded with `fetch` or `XMLHttpRequest` most of the time. However, it generally does not wait longer than 5 seconds. Other search engines like Bing and Yandex currently do not execute JavaScript at all.
 
+## Issues
+
+Delete the `.cache` and `.localserver` folders if you encounter issues with the development server or building for production, as old data in these directories can sometimes cause issues.
+
 ## Testing
 
 Hyperapp Kit uses [Jest](https://github.com/facebook/jest) for testing. It provides an automatic browser-like environment for Node with [JSDOM](https://github.com/jsdom/jsdom) to test your components.
