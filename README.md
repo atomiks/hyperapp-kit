@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  A starter kit for Hyperapp projects with prerendering.
+  A starter kit for [Hyperapp](https://github.com/hyperapp/hyperapp) projects with prerendering.
 </p>
 
 ## Install
@@ -36,15 +36,15 @@ Hyperapp Kit uses [Parcel](https://github.com/parcel-bundler/parcel). It comes w
 npm run build
 ```
 
-Parcel's build process will automatically minify and tree-shake the files for optimization. The files are also given hashes for cache-busting.
+The files are minified and tree-shaken for optimization, and given hashes for cache-busting.
 
-Hyperapp Kit comes with a script `build.js` on the root and the `prerender` function inside `src/js/utils.js` to enable prerendering for SEO and better user experience.
+### Prerendering
 
-Using [`@hyperapp/render`](https://github.com/hyperapp/render), the app is turned into an HTML string that is written to the `index.html` file that Parcel outputs to `dist/`. If you want to change the structure of the project, you will need to edit these files to ensure everything stays in sync.
+The container element (`<body>` by default) contains the app as an HTML string with the initial state. This means the browser can paint the elements onto the screen progressively as the HTML is streamed from the server without needing to download the JavaScript bundle, parse it, and then execute it. This is great for user experience and SEO, especially on slow 3G connections and low-end mobile phones.
 
-Static parts of the app (i.e. content not loaded via `fetch` or `XMLHttpRequest`) exist as markup in the `index.html` file for a faster first meaningful paint by browsers. This means the entire JavaScript file does not need to be downloaded, parsed, and executed before the elements can be painted onto the screen. The nodes are hydrated by Hyperapp once the JavaScript has been downloaded and parsed to enable interactivity.
+Prerendering is distinguished from server-side rendering (SSR) in that HTTP requests for dynamic content are still done on the client, not the server. This means only static content is prerendered, and `XMLHttpRequest` or `fetch` requests are still made client-side.
 
-> Google is able to index dynamic content loaded with `fetch` or `XMLHttpRequest` most of the time. However, it generally does not wait longer than 5 seconds. Other search engines like Bing and Yandex currently do not execute JavaScript at all.
+Google is able to index dynamic content loaded with `fetch` or `XMLHttpRequest` most of the time. However, it generally does not wait longer than 5 seconds. Other search engines like Bing and Yandex currently do not execute JavaScript at all.
 
 ## Issues
 
