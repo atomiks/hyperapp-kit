@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  A starter kit for [Hyperapp](https://github.com/hyperapp/hyperapp) projects with prerendering.
+  A starter kit for <a href="https://github.com/hyperapp/hyperapp" target="_blank">Hyperapp</a> projects with prerendering.
 </p>
 
 ## Install
@@ -40,11 +40,11 @@ The files are minified and tree-shaken for optimization, and given hashes for ca
 
 ### Prerendering
 
-The container element (`<body>` by default) contains the app as an HTML string with the initial state. This means the browser can paint the elements onto the screen progressively as the HTML is streamed from the server without needing to download the JavaScript bundle, parse it, and then execute it. This is great for user experience and SEO, especially on slow 3G connections and low-end mobile phones.
+The container element (`<body>` by default) contains the app as an HTML string with the initial state. This means the browser can paint the elements onto the screen progressively as the HTML is streamed from the server without needing to download the JavaScript bundle, parse it, and then execute it. This is great for user experience and SEO, especially on slow 3G connections and low-end mobile phones. Once the JavaScript is ready, the nodes are hydrated by Hyperapp to enable interactivity.
 
 Prerendering is distinguished from server-side rendering (SSR) in that HTTP requests for dynamic content are still done on the client, not the server. This means only static content is prerendered, and `XMLHttpRequest` or `fetch` requests are still made client-side.
 
-Google is able to index dynamic content loaded with `fetch` or `XMLHttpRequest` most of the time. However, it generally does not wait longer than 5 seconds. Other search engines like Bing and Yandex currently do not execute JavaScript at all.
+Google is able to index dynamic content loaded with AJAX most of the time. However, it generally does not wait longer than 5 seconds. Other search engines like Bing and Yandex currently do not execute JavaScript at all.
 
 ## Issues
 
