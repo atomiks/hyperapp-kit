@@ -6,6 +6,6 @@ export default (state, actions) => (
   <div class="app">
     <img class="hyperapp-logo" src={hyperappLogo} />
     <h1>Hyperapp Kit</h1>
-    <Counter />
+    <Counter count={state.count} />
   </div>
 )
