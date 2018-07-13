@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  A starter kit for <a href="https://github.com/hyperapp/hyperapp" target="_blank">Hyperapp</a> projects with prerendering.
+  A starter kit for <a href="https://github.com/hyperapp/hyperapp" target="\_blank">Hyperapp</a> projects with prerendering.
 </p>
 
 ## Install
@@ -40,7 +40,7 @@ The files are minified and tree-shaken for optimization, and given hashes for ca
 
 ### Prerendering
 
-The container element (`<body>` by default) contains the app as an HTML string with the initial state. This means the browser can paint the elements onto the screen progressively as the HTML is streamed from the server without needing to download the JavaScript bundle, parse it, and then execute it. This is great for user experience and SEO, especially on slow 3G connections and low-end mobile phones. Once the JavaScript is ready, the nodes are hydrated by Hyperapp to enable interactivity.
+Upon build, the container element (`<body>` by default) will contain the app as an HTML string with the initial state. This means the browser can paint the elements onto the screen progressively as the HTML is streamed from the server without needing to download the JavaScript bundle, parse it, and then execute it. This is great for user experience and SEO, especially on slow 3G connections and low-end mobile phones. Once the JavaScript is ready, the nodes are hydrated by Hyperapp to enable interactivity.
 
 Prerendering is distinguished from server-side rendering (SSR) in that HTTP requests for dynamic content are still done on the client, not the server. This means only static content is prerendered, and `XMLHttpRequest` or `fetch` requests are still made client-side.
 
@@ -65,17 +65,13 @@ npm test
 
 Virtual nodes as XML tags instead of `h` function calls is usually easier to mentally parse because of the terminating tag. It also looks stylistically pleasing due to familiarity with writing UIs as HTML.
 
-### Prettier
-
-Prettier formats your code to keep it nice and consistent. Use default settings with the option `semi = false`. Single quotes are popular, but when working with JSX it makes sense to use double quotes because of HTML conventions.
-
 ### Sass
 
-The most popular CSS preprocessor. Works nicely with BEM - see below.
+The most popular CSS preprocessor. Works nicely with the BEM methodology - see below.
 
 ### CSS
 
-Store styles in `src/css`. Each component should have its own stylesheet. It should then be imported at the top of `src/css/index.scss`.
+Store styles in `src/css`. Each component should have its own stylesheet which is imported into the component's JavaScript file.
 
 Use the BEM methodology for scoping and maintainable CSS without styled components overhead.
 
@@ -94,17 +90,17 @@ Use the BEM methodology for scoping and maintainable CSS without styled componen
 Use the `cc` function in `src/js/utils.js` for conditional class concatenation:
 
 ```js
-cc("static", { highlighted: false }) // "static"
-cc("static", { highlighted: true }) // "static highlighted"
+cc('static', { highlighted: false }) // "static"
+cc('static', { highlighted: true }) // "static highlighted"
 cc({ a: false, b: true }) // "b"
 ```
 
 For automatic BEM elements and modifiers, use the higher-order `bem` function in `src/js/utils.js`:
 
 ```js
-const cc = bem("block")
-cc("element") // "block__element"
-cc("element", { modifier: true }) // "block__element--modifier"
+const cc = bem('block')
+cc('element') // "block__element"
+cc('element', { modifier: true }) // "block__element--modifier"
 cc({ modifier: true }) // "block--modifier"
 ```
 
