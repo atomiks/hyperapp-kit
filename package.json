@@ -26,6 +26,6 @@
     "babel-preset-stage-2": "^6.24.1",
     "jest": "^23.1.0",
     "node-sass": "^4.9.0",
-    "parcel": "^1.9.2"
+    "parcel": "^1.9.6"
   }
 }
