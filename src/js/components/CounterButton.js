@@ -1,4 +1,5 @@
-import { h } from "hyperapp"
+import { h } from 'hyperapp'
+import '~/css/components/CounterButton'
 
 export default ({ by }, text) => (state, actions) => (
   <button

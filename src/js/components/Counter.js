@@ -1,5 +1,6 @@
-import { h } from "hyperapp"
-import CounterButton from "./CounterButton"
+import { h } from 'hyperapp'
+import CounterButton from './CounterButton'
+import '~/css/components/Counter'
 
 export default ({ count }) => (
   <div class="Counter">
