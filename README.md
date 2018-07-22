@@ -67,22 +67,24 @@ Virtual nodes as XML tags instead of `h` function calls is usually easier to men
 
 ### Sass
 
-The most popular CSS preprocessor. Works nicely with the BEM methodology - see below.
+The most popular CSS preprocessor.
 
 ### CSS
 
 Store styles in `src/css`. Each component should have its own stylesheet which is imported into the component's JavaScript file.
 
-Use the BEM methodology for scoping and maintainable CSS without styled components overhead.
+Use a methodology for scoping and maintainable CSS without styled components overhead.
 
 ```scss
 .MyComponent {
-  &__element {
-    color: red;
+  background: #333;
+}
 
-    &--modifier {
-      color: green;
-    }
+.MyComponent-element {
+  color: white;
+
+  &--active {
+    color: pink;
   }
 }
 ```
