@@ -1,3 +1,4 @@
 export default {
-  count: by => state => ({ count: state.count + by })
+  increment: () => state => ({ count: state.count + 1 }),
+  decrement: () => state => ({ count: state.count - 1 })
 }

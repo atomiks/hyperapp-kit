@@ -7,13 +7,18 @@
     "start": "npm run dev",
     "dev": "parcel src/index.html -d .localserver --open",
     "build": "rm -rf dist && parcel build src/index.html --public-url ./ && node build.js",
-    "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
+    "wipe": "rm -rf .git && git init",
     "test": "jest --coverage --no-cache"
   },
   "author": "atomiks",
   "license": "MIT",
   "alias": {
     "~": "src"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "~/css/(.*)": "<rootDir>/test/__style-mock__.js"
+    }
   },
   "dependencies": {
     "@hyperapp/render": "^2.0.0",

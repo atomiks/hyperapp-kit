@@ -1,23 +1,25 @@
-import actions from "../src/js/actions"
+import actions from '../src/js/actions'
 
-describe("count", () => {
-  test("add 1", () => {
-    const add1 = actions.count(1)({ count: 0 })
-    expect(add1).toEqual({ count: 1 })
+describe('increment', () => {
+  test('initial state', () => {
+    const inc = actions.increment()({ count: 0 })
+    expect(inc).toEqual({ count: 1 })
   })
 
-  test("subtract 1", () => {
-    const sub1 = actions.count(-1)({ count: 0 })
-    expect(sub1).toEqual({ count: -1 })
+  test('non-initial state', () => {
+    const inc = actions.increment()({ count: 18 })
+    expect(inc).toEqual({ count: 19 })
+  })
+})
+
+describe('decrement', () => {
+  test('initial state', () => {
+    const dec = actions.decrement()({ count: 1 })
+    expect(dec).toEqual({ count: 0 })
   })
 
-  test("add 1 non-initial state", () => {
-    const add1 = actions.count(1)({ count: 18 })
-    expect(add1).toEqual({ count: 19 })
-  })
-
-  test("subtract 1 non-initial state", () => {
-    const sub1 = actions.count(-1)({ count: 8729 })
-    expect(sub1).toEqual({ count: 8728 })
+  test('non-initial state', () => {
+    const dec = actions.decrement()({ count: 18 })
+    expect(dec).toEqual({ count: 17 })
   })
 })

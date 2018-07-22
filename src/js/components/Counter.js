@@ -1,11 +1,14 @@
 import { h } from 'hyperapp'
-import CounterButton from './CounterButton'
 import '~/css/components/Counter'
 
-export default ({ count }) => (
+export default ({ count, increment, decrement }) => (
   <div class="Counter">
-    <CounterButton by={-1}>-</CounterButton>
-    <div class="Counter__count">{count}</div>
-    <CounterButton by={1}>+</CounterButton>
+    <button class="Counter-button" onclick={decrement} disabled={count <= 0}>
+      –
+    </button>
+    <div class="Counter-count">{count}</div>
+    <button class="Counter-button" onclick={increment}>
+      +
+    </button>
   </div>
 )

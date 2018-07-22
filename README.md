@@ -24,7 +24,7 @@ Wipe git commit history with `npm run wipe`.
 
 ```shell
 # Start development server on http://localhost:1234
-npm run dev
+npm start
 ```
 
 Hyperapp Kit uses [Parcel](https://github.com/parcel-bundler/parcel). It comes with a development server and hot module reloading out of the box.
@@ -93,15 +93,6 @@ Use the `cc` function in `src/js/utils.js` for conditional class concatenation:
 cc('static', { highlighted: false }) // "static"
 cc('static', { highlighted: true }) // "static highlighted"
 cc({ a: false, b: true }) // "b"
-```
-
-For automatic BEM elements and modifiers, use the higher-order `bem` function in `src/js/utils.js`:
-
-```js
-const cc = bem('block')
-cc('element') // "block__element"
-cc('element', { modifier: true }) // "block__element--modifier"
-cc({ modifier: true }) // "block--modifier"
 ```
 
 For generic or CSS framework components, use `kebab-case`:
