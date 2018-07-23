@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "parcel src/index.html -d .localserver --open",
     "build": "rm -rf dist && parcel build src/index.html --public-url ./ && node build.js",
-    "wipe": "rm -rf .git && git init",
+    "wipe": "rm -rf .git && git init && git add . && git commit -m \"init\"",
     "test": "jest --coverage --no-cache"
   },
   "author": "atomiks",
